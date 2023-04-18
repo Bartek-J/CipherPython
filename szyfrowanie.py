@@ -3,7 +3,7 @@ from Crypto.Cipher import ChaCha20, Salsa20, ARC4
 from Crypto.Random import get_random_bytes
 
 
-FILES_TO_TEST = ['test_file.txt', 'test_file2.txt', 'test_file3.txt', 'pan_tadeusz.txt', 'lalka.txt', 'books.txt']
+FILES_TO_TEST = ['test_file.txt', 'test_file2.txt', 'test_file3.txt', 'pan_tadeusz.txt', 'lalka.txt', 'booksCUS.txt', 'booksHMV.txt', 'booksJP.txt', 'booksKOR.txt']
 
 
 def get_text_from_file(file_name) -> str:
