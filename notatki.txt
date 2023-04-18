@@ -12,3 +12,6 @@ entropia: 4,89286
 
 Plik lalka.txt
 entropia: 4,81958
+
+Plik books.txt (spis treści biblii po chińsku)
+entropia: 8.03518
