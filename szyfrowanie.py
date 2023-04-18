@@ -7,7 +7,7 @@ FILES_TO_TEST = ['test_file.txt', 'test_file2.txt', 'test_file3.txt']
 
 
 def get_text_from_file(file_name) -> str:
-    file = open(file_name, mode='r')
+    file = open(file_name, mode='r', encoding='utf8')
     text = file.read()
     file.close()
     return text
