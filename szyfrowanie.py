@@ -3,7 +3,7 @@ from Crypto.Cipher import ChaCha20, Salsa20, ARC4
 from Crypto.Random import get_random_bytes
 
 
-FILES_TO_TEST = ['test_file.txt', 'test_file2.txt', 'test_file3.txt']
+FILES_TO_TEST = ['test_file.txt', 'test_file2.txt']
 
 
 def get_text_from_file(file_name) -> str:
@@ -21,13 +21,14 @@ def encrypt_text(text: str, cipher, name: str) -> None:
 
 
 def main() -> None:
-    texts = [get_text_from_file(file) for file in FILES_TO_TEST]
+    texts = {file: get_text_from_file(file) for file in FILES_TO_TEST}
     key16 = get_random_bytes(16)
     key32 = get_random_bytes(32)
     iv = get_random_bytes(8)
 
-    for text in texts:
+    for name, text in texts.items():
         print('---------------------------------')
+        print(f'file: {name.split(".")[0]}')
         print(f'Text length: {len(text)}')
         encrypt_text(text, ARC4.new(key16), 'RC4')
         encrypt_text(text, Salsa20.new(key16, iv), 'Salsa')
