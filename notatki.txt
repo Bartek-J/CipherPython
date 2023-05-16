@@ -13,5 +13,24 @@ entropia: 4,89286
 Plik lalka.txt
 entropia: 4,81958
 
-Plik books.txt (spis treści biblii po chińsku)
+Plik booksCUS.txt (spis treści biblii po chińsku)
 entropia: 8.03518
+
+Plik booksHMV.txt (spis treści biblii po hebrajsku)
+entropia: 5.03994
+
+Plik booksJP.txt (spis treści biblii po japońsku)
+entropia: 7.63906
+
+Plik booksKOR.txt (spis treści biblii po koreańsku)
+entropia: 6.62641
+
+Plik t1.txt
+entropia: 7.97863
+
+Plik t2.txt
+entropia: 5.31905
+
+Plik t3.txt
+entropia: 5.31799
+
