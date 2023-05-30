@@ -5,7 +5,18 @@ from Crypto.Cipher import ChaCha20, Salsa20, ARC4
 from Crypto.Random import get_random_bytes
 import matplotlib.pyplot as plt
 import numpy as np
+import math
+from collections import Counter
 
+def entropy(string):
+    freq_dict = dict(Counter(string))
+    entropy_val = 0
+    total_chars = len(string)
+
+    for char in freq_dict:
+        probability = freq_dict[char] / total_chars
+        entropy_val += probability * math.log2(probability)
+    return -entropy_val
 
 def get_text_from_file(file_name) -> str:
     file = open(file_name, mode='r', encoding='utf8')
@@ -50,6 +61,7 @@ def main() -> None:
         print('---------------------------------')
         print(f'file: {name.split(".")[0]}')
         print(f'Text length: {file_len}')
+        print(f'entropia: {entropy(text)}')
         plot_data['file_length'].append(file_len)
         plot_data['RC4'].append(encrypt_text(text, ARC4.new(key16), 'RC4'))
         plot_data['Salsa'].append(encrypt_text(text, Salsa20.new(key16, iv), 'Salsa'))
